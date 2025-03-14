@@ -21,6 +21,8 @@ def create_connection():
 
         # git status => to check the status of files
         # git diff => to check change in files
+        # copy paste from github from code
+        # git push
 
 
 def create_table(con):
