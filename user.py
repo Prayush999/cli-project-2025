@@ -5,6 +5,30 @@ def create_connection():
     try:
         con = sqlite3.connect("users.sqlite3")
         return con
+    
+    
+
+def create_table(con):
+    CREATE_USER_TABLE_QUERY ="""
+        create table IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            first_name CHAR(255) NOT NULL,
+            last_name CHAR(255) NOT NULL,
+            company_name CHAR(255) NOT NULL, 
+            address CHAR(255) NOT NULL,
+            city CHAR(255) NOT NULL,
+            county CHAR(255) NOT NULL,
+            state CHAR(255) NOT NULL,
+            zip REAL NOT NULL,
+            phone1 CHAR(255) NOT NULL,
+            phone2 CHAR(255),
+            email CHAR(255) NOT NULL,
+            web text
+        );
+    """
+    cur = con.cursor()
+    cur.execute(CREATE_USER_TABLE_QUERY)
+    print('User id created sucessfully.')
         
     except Exception as e:
         print('error',e)
@@ -24,6 +48,8 @@ def create_connection():
         # copy paste from github from code
         # git push
 
+        # git checkout -b feature name => to make branch
+
 
 def create_table(con):
     CREATE_USER_TABLE_QUERY ="""
@@ -31,7 +57,7 @@ def create_table(con):
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             first_name CHAR(255) NOT NULL,
             last_name CHAR(255) NOT NULL,
-            company_name CHAR(255) NOT NULL,
+            company_name CHAR(255) NOT NULL, 
             address CHAR(255) NOT NULL,
             city CHAR(255) NOT NULL,
             county CHAR(255) NOT NULL,
