@@ -9,9 +9,18 @@ def create_connection():
     except Exception as e:
         print('error',e)
 
-
+        # open git bash
         # git config --global user.name "Prayush Neupane"
         # git config --global user.email "kprayush999@gmail.com"
+
+        # git init => first time only / it init git repository
+
+        # for every time after you change code
+        # git add . 
+        # git commit -m " Your commit message " => k kaam garoo bhanni yesma 
+
+        # git status => to check the status of files
+        # git diff => to check change in files
 
 
 def create_table(con):
